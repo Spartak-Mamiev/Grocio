@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './LoginPage.module.css';
 
 export default function LoginPage() {
@@ -27,7 +28,7 @@ export default function LoginPage() {
         <button type="submit">Sign in</button>
       </form>
       <p>
-        Not registered? <a href="/signup">Sign up</a>.
+        Not registered? <Link to="/signup">Sign up</Link>.
       </p>
     </main>
   );
