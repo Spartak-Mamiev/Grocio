@@ -4,6 +4,7 @@ import MainPage from './components/mainPage/MainPage';
 import './App.css';
 import Members from './components/members/Members';
 import Settings from './components/settings/Settings';
+import ListPage from './components/listPage/ListPage';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
         <Route
           path="/settings"
           element={<Settings />}
+        />
+        <Route
+          path="/list"
+          element={<ListPage />}
         />
       </Routes>
     </BrowserRouter>
