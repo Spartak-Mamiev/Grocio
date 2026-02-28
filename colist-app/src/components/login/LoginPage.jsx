@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './LoginPage.module.css';
 
+import Button from '../ui/Button';
+
 export default function LoginPage() {
   return (
     <main className={styles.loginPageContainer}>
@@ -37,12 +39,14 @@ export default function LoginPage() {
             placeholder="your@email.com"
           />
         </div>
-        <button
-          className={styles.submitBtn}
+        <Button
           type="submit"
+          variant="primary"
+          size="large"
+          fullWidth
         >
           Sign in
-        </button>
+        </Button>
       </form>
       <p className={styles.signupPrompt}>
         Not registered?{' '}
