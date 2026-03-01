@@ -1,0 +1,23 @@
+import styles from './Item.module.css';
+import Button from '../button/Button';
+import { FaRegTrashAlt } from 'react-icons/fa';
+
+export default function Item({ name, addedBy }) {
+  return (
+    <div className={styles.groceryItem}>
+      <label className={styles.itemLabel}>
+        <input
+          type="checkbox"
+          className={styles.itemCheckbox}
+        />
+        <div className={styles.itemText}>
+          <span className={styles.itemName}>{name}</span>
+          <small className={styles.itemMeta}>{addedBy}</small>
+        </div>
+      </label>
+      <Button>
+        <FaRegTrashAlt />
+      </Button>
+    </div>
+  );
+}

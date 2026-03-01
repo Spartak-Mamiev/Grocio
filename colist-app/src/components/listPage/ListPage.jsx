@@ -3,8 +3,10 @@ import styles from './ListPage.module.css';
 import Button from '../ui/button/Button';
 import Header from '../ui/header/Header';
 import Avatar from '../ui/avatar/Avatar';
+import Item from '../ui/item/Item';
 
 import { HiOutlineUserAdd } from 'react-icons/hi';
+import { FaRegTrashAlt } from 'react-icons/fa';
 
 export default function ListPage() {
   return (
@@ -31,58 +33,36 @@ export default function ListPage() {
           aria-label="Active items"
           className={styles.activeSection}
         >
-          <h2 className={styles.sectionTitle}>Active</h2>
           <ul className={styles.activeItems}>
-            <li className={styles.groceryItem}>
-              <label className={styles.itemLabel}>
-                <input
-                  type="checkbox"
-                  className={styles.itemCheckbox}
-                />
-                <span className={styles.itemName}>Milk</span>
-              </label>
-              <small className={styles.itemMeta}>Added by You</small>
-            </li>
-            <li className={styles.groceryItem}>
-              <label className={styles.itemLabel}>
-                <input
-                  type="checkbox"
-                  className={styles.itemCheckbox}
-                />
-                <span className={styles.itemName}>Milk</span>
-              </label>
-              <small className={styles.itemMeta}>Added by You</small>
-            </li>
+            <Item
+              name="Milk"
+              addedBy="Added by you"
+            />
+            <Item
+              name="Milk"
+              addedBy="Added by you"
+            />
+
+            <Item
+              name="Milk"
+              addedBy="Added by you"
+            />
           </ul>
         </section>
         <section
           aria-label="Completed items"
           className={styles.completedSection}
         >
-          <h2 className={styles.sectionTitle}>Completed</h2>
+          <p className={styles.sectionTitle}>Completed</p>
           <ul className={styles.completedItems}>
-            <li className={styles.groceryItem}>
-              <label className={styles.itemLabel}>
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className={styles.itemCheckbox}
-                />
-                <span className={styles.itemName}>Milk</span>
-              </label>
-              <small className={styles.itemMeta}>Added by You</small>
-            </li>
-            <li className={styles.groceryItem}>
-              <label className={styles.itemLabel}>
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className={styles.itemCheckbox}
-                />
-                <span className={styles.itemName}>Milk</span>
-              </label>
-              <small className={styles.itemMeta}>Added by You</small>
-            </li>
+            <Item
+              name="Milk"
+              addedBy="Added by you"
+            />
+            <Item
+              name="Milk"
+              addedBy="Added by you"
+            />
           </ul>
         </section>
       </main>

@@ -1,0 +1,19 @@
+.groceryItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.itemLabel{
+  display: flex;
+  gap: 10px;
+}
+
+.itemText{
+  display: flex;
+  flex-direction: column;
+}
