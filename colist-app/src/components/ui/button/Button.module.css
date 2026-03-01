@@ -53,6 +53,11 @@
   font-weight: var(--font-weight-semibold);
 }
 
+.transparent{
+  background: none;
+
+}
+
 /* Sizes */
 .small {
   font-size: var(--font-size-caption);

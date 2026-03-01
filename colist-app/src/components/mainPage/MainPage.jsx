@@ -2,19 +2,12 @@ import { Link } from 'react-router-dom';
 import styles from './MainPage.module.css';
 import Button from '../ui/button/Button';
 import Input from '../ui/input/Input';
+import Header from '../ui/header/Header';
 
 export default function MainPage() {
   return (
     <main className={styles.mainPage}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>Your Lists</h1>
-        <Link
-          to="/settings"
-          className={styles.settingsBtn}
-        >
-          Settings
-        </Link>
-      </header>
+      <Header />
       <section
         className={styles.listsSection}
         aria-label="Your lists"

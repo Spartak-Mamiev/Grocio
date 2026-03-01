@@ -1,26 +1,14 @@
 import { Link } from 'react-router-dom';
 import styles from './ListPage.module.css';
 import Button from '../ui/button/Button';
+import Header from '../ui/header/Header';
 
 export default function ListPage() {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.headerTopPart}>
-          <Link
-            to="/"
-            className={styles.backBtn}
-          >
-            Back
-          </Link>
-          <h1 className={styles.listTitle}>List Name</h1>
-          <Link
-            to="/settings"
-            className={styles.settingsBtn}
-          >
-            Settings
-          </Link>
-        </div>
+        <Header />
+
         <div className={styles.collaboratorsBar}>
           <ul
             aria-label="Collaborators"
