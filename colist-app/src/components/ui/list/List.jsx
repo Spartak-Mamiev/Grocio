@@ -9,8 +9,8 @@ export default function List({ name, creator }) {
         <h3>{name}</h3>
         <p>Created by {creator}</p>
       </div>
-      <Button>
-        <FaRegTrashAlt />
+      <Button variant="transparent">
+        <FaRegTrashAlt fill="red" />
       </Button>
     </div>
   );
