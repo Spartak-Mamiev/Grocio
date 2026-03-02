@@ -1,14 +1,23 @@
 .membersPage {
-    padding: 20px;
+    background-color: var(--color-background);
 }
 
 .pageHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid var(--color-border);
+    padding: 20px;
+    background-color: var(--color-surface);
 }
 
 .headerTopRow {
+    display: flex;
+    gap: 20px;
 }
 
 .mainContent {
+    padding: 20px;
 }
 
 .listOfMembers {

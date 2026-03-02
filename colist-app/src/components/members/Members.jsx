@@ -1,25 +1,28 @@
 import styles from './Members.module.css';
 import Button from '../ui/button/Button';
+import Member from '../ui/member/Member';
+import { FaArrowLeft } from "react-icons/fa";
+import { LuSend } from "react-icons/lu";
+
 
 export default function Members() {
   return (
     <div className={styles.membersPage}>
       <header className={styles.pageHeader}>
         <div className={styles.headerTopRow}>
-          <Button>Back</Button>
-          <h1>Members</h1>
+           <Button variant="transparent">
+          <FaArrowLeft />
+        </Button>
+          <h2>Members</h2>
         </div>
         <Button>
-          <img
-            src=""
-            alt=""
-            aria-hidden="true"
-          />
-          <span>Invite Member</span>
+          <LuSend stroke='white'/>
+          Invite Member
         </Button>
       </header>
       <main className={styles.mainContent}>
-        <ul className={styles.listOfMembers}>
+        <Member name='You' email='you@emial.com'></Member>
+      {/*   <ul className={styles.listOfMembers}>
           <li className={styles.memberContainer}>
             <img
               src=""
@@ -37,7 +40,7 @@ export default function Members() {
               Delete
             </Button>
           </li>
-        </ul>
+        </ul> */}
       </main>
     </div>
   );
