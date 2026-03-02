@@ -15,8 +15,8 @@ export default function Item({ name, addedBy }) {
           <small className={styles.itemMeta}>{addedBy}</small>
         </div>
       </label>
-      <Button>
-        <FaRegTrashAlt />
+      <Button variant='transparent'>
+        <FaRegTrashAlt fill='red'/>
       </Button>
     </div>
   );
