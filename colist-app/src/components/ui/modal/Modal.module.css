@@ -29,3 +29,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+.disabled{
+  display: none;
+}
+
+.enabled{
+  display: block;
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+}

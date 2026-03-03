@@ -30,7 +30,12 @@ export default function ListPage() {
         </div>
       </header>
       <main className={styles.groceryList}>
-        <Modal></Modal>
+        <Modal 
+        listName='Edit Item'
+        type='text'
+        variant='disabled'
+        mainBtnName='Save'
+        ></Modal>
         <section
           aria-label="Active items"
           className={styles.activeSection}
