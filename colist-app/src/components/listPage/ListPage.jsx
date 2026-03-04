@@ -1,25 +1,33 @@
-import { Link } from 'react-router-dom';
-import styles from './ListPage.module.css';
-import Button from '../ui/button/Button';
-import Header from '../ui/header/Header';
-import Avatar from '../ui/avatar/Avatar';
-import Item from '../ui/item/Item';
-import Modal from '../ui/modal/Modal';
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import styles from "./ListPage.module.css";
+import Button from "../ui/button/Button";
+import Header from "../ui/header/Header";
+import Avatar from "../ui/avatar/Avatar";
+import Item from "../ui/item/Item";
+import Modal from "../ui/modal/Modal";
 
-import { HiOutlineUserAdd } from 'react-icons/hi';
-import { FaRegTrashAlt } from 'react-icons/fa';
+import { HiOutlineUserAdd } from "react-icons/hi";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 export default function ListPage() {
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+  const handleItemPress = () => {
+    setIsEditModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsEditModalOpen(false);
+  };
+
   return (
     <>
       <header className={styles.header}>
         <Header children="Grocery List" />
 
         <div className={styles.collaboratorsBar}>
-          <div
-            aria-label="Collaborators"
-            className={styles.collaboratorsList}
-          >
+          <div aria-label="Collaborators" className={styles.collaboratorsList}>
             <Avatar children="M" />
             <Avatar children="S" />
           </div>
@@ -30,29 +38,32 @@ export default function ListPage() {
         </div>
       </header>
       <main className={styles.groceryList}>
-        <Modal 
-        listName='Edit Item'
-        type='text'
-        variant='disabled'
-        mainBtnName='Save'
-        ></Modal>
-        <section
-          aria-label="Active items"
-          className={styles.activeSection}
-        >
+        {isEditModalOpen && (
+          <Modal
+            listName="Edit Item"
+            type="text"
+            variant="disabled"
+            mainBtnName="Save"
+            onClose={handleCloseModal}
+          ></Modal>
+        )}
+        <section aria-label="Active items" className={styles.activeSection}>
           <ul className={styles.activeItems}>
             <Item
               name="Milk"
               addedBy="Added by you"
+              onPress={handleItemPress}
             />
             <Item
               name="Milk"
               addedBy="Added by you"
+              onPress={handleItemPress}
             />
 
             <Item
               name="Milk"
               addedBy="Added by you"
+              onPress={handleItemPress}
             />
           </ul>
         </section>
@@ -65,10 +76,12 @@ export default function ListPage() {
             <Item
               name="Milk"
               addedBy="Added by you"
+              onPress={handleItemPress}
             />
             <Item
               name="Milk"
               addedBy="Added by you"
+              onPress={handleItemPress}
             />
           </ul>
         </section>
