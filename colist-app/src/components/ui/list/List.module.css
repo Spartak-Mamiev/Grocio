@@ -13,7 +13,7 @@
 }
 
 .listContainer:hover {
-  border: 2px solid var(--color-primary);
+  box-shadow: inset 0 0 0 2px var(--color-primary);
 }
 
 .listNameContainer {
