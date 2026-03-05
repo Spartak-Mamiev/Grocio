@@ -16,27 +16,11 @@
     gap: 20px;
 }
 
+.headerTopRow h1{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .mainContent {
     padding: 20px;
-}
-
-.listOfMembers {
-}
-
-.memberContainer {
-}
-
-.memberAvatar {
-}
-
-.memberInfoContainer {
-}
-
-.deleteBtn {
-}
-
-.backBtn {
-}
-
-.inviteBtn {
 }

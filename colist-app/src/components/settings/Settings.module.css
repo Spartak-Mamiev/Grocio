@@ -10,6 +10,11 @@
   background-color: var(--color-surface);
 }
 
+.pageHeader h1{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mainContent {
   display: flex;
   flex-direction: column;

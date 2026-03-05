@@ -12,7 +12,7 @@
   margin-left: auto;
 }
 
-form{
+.form{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,6 +20,6 @@ form{
   padding: 20px;
 }
 
-Button{
+.form button{
   margin-top: 30px;
 }

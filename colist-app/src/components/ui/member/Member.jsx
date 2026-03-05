@@ -1,7 +1,7 @@
-import styles from "./Member.module.css";
-import Avatar from "../avatar/Avatar";
-import Button from "../button/Button";
-import { FaRegTrashAlt } from "react-icons/fa";
+import styles from './Member.module.css';
+import Avatar from '../avatar/Avatar';
+import Button from '../button/Button';
+import { FaRegTrashAlt } from 'react-icons/fa';
 
 export default function Member({ name, email }) {
   return (
@@ -14,8 +14,11 @@ export default function Member({ name, email }) {
         </div>
       </div>
 
-      <Button variant="transparent">
-        <FaRegTrashAlt fill="red"/>
+      <Button
+        variant="transparent"
+        aria-label="Remove member"
+      >
+        <FaRegTrashAlt fill="red" />
       </Button>
     </div>
   );

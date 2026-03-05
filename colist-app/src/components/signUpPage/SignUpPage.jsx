@@ -17,7 +17,10 @@ export default function SignUpPage() {
   return (
     <div className={styles.signUpPage}>
       <header className={styles.pageHeader}>
-        <Link to="/login">
+        <Link
+          to="/login"
+          aria-label="Go back"
+        >
           <FaArrowLeft />
         </Link>
         <h1>Sign Up</h1>
@@ -51,14 +54,16 @@ export default function SignUpPage() {
             name="password"
             placeholder="Your Password"
             label="Password"
-            labelFor="Password"
+            labelFor="password"
             required
           ></Input>
           <Input
             type="password"
-            id="password"
-            name="password"
+            id="confirmPassword"
+            name="confirmPassword"
             placeholder="Confirm Your Password"
+            label="Confirm Password"
+            labelFor="confirmPassword"
             required
           ></Input>
           <Button

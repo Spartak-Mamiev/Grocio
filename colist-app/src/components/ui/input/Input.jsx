@@ -8,12 +8,14 @@ export default function Input({
 }) {
   return (
     <>
-      <label
-        className={styles.inputLabel}
-        htmlFor={labelFor}
-      >
-        {label}
-      </label>
+      {label && (
+        <label
+          className={styles.inputLabel}
+          htmlFor={labelFor}
+        >
+          {label}
+        </label>
+      )}
       <input
         className={styles.input}
         type={type}

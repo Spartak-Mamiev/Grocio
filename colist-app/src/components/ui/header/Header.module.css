@@ -1,16 +1,26 @@
 .header{
   display: flex;
-  justify-content: center;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  position: relative;
 }
 
-
-.listGrid li{
-  list-style: none;
+.title{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .settingsBtn{
   color: var(--color-text-primary);
+}
+
+.backBtn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  font-size: inherit;
+  padding: 0;
 }

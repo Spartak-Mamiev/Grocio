@@ -2,22 +2,19 @@ import styles from './Settings.module.css';
 import Button from '../ui/button/Button';
 import Input from '../ui/input/Input';
 import Avatar from '../ui/avatar/Avatar';
+import Header from '../ui/header/Header';
 
-import { FaArrowLeft } from 'react-icons/fa';
 import { RxExit } from 'react-icons/rx';
-import { CiDark } from 'react-icons/ci';
-import { CiLight } from 'react-icons/ci';
-import { Link } from 'react-router-dom';
 
 export default function Settings() {
   return (
     <div className={styles.settingsPage}>
-      <header className={styles.pageHeader}>
-        <Link to="/">
-          <FaArrowLeft />
-        </Link>
-        <h1>Settings</h1>
-      </header>
+      <Header
+        showBack
+        showSettings={false}
+      >
+        Settings
+      </Header>
       <main className={styles.mainContent}>
         <section
           className={styles.section}
@@ -31,7 +28,10 @@ export default function Settings() {
               <p>you@mail.com</p>
             </div>
           </div>
-          <form className={styles.profileForm}>
+          <form
+            className={styles.profileForm}
+            onSubmit={(e) => e.preventDefault()}
+          >
             <Input
               type="text"
               id="name"
@@ -63,14 +63,8 @@ export default function Settings() {
             id="theme"
             className={styles.select}
           >
-            <option value="Light">
-              <CiLight />
-              Light
-            </option>
-            <option value="Dark">
-              <CiDark />
-              Dark
-            </option>
+            <option value="Light">Light</option>
+            <option value="Dark">Dark</option>
           </select>
         </section>
 
@@ -78,7 +72,7 @@ export default function Settings() {
           className={styles.section}
           aria-labelledby="notifications-heading"
         >
-          <h3 id="notifications-heading">Notifications</h3>
+          <h2 id="notifications-heading">Notifications</h2>
           <div className={styles.notificationRow}>
             <div className={styles.notificationText}>
               <h4>Push Notifications</h4>
@@ -104,9 +98,9 @@ export default function Settings() {
           className={styles.section}
           aria-labelledby="account-heading"
         >
-          <h3 id="account-heading">Account</h3>
+          <h2 id="account-heading">Account</h2>
           <Button
-            type="Button"
+            type="button"
             variant="logout"
           >
             <RxExit />

@@ -8,7 +8,7 @@ import List from '../ui/list/List';
 export default function MainPage() {
   return (
     <main className={styles.mainPage}>
-      <Header>Your Lists</Header>
+      <Header showMenu={false}>Your Lists</Header>
       <section
         className={styles.listsSection}
         aria-label="Your lists"
@@ -24,13 +24,16 @@ export default function MainPage() {
           ></List>
         </div>
       </section>
-      <footer>
+      <div
+        className={styles.footer}
+        role="toolbar"
+      >
         <Input
           type="search"
           placeholder="Add an item..."
         ></Input>
-        <Button>+</Button>
-      </footer>
+        <Button aria-label="Add list">+</Button>
+      </div>
     </main>
   );
 }

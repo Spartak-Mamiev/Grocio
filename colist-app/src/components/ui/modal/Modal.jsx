@@ -1,8 +1,8 @@
-import styles from "./Modal.module.css";
-import Input from "../input/Input";
-import Button from "../button/Button";
+import styles from './Modal.module.css';
+import Input from '../input/Input';
+import Button from '../button/Button';
 
-import { IoClose } from "react-icons/io5";
+import { IoClose } from 'react-icons/io5';
 
 export default function Modal({
   listName,
@@ -14,22 +14,40 @@ export default function Modal({
   onClose,
 }) {
   return (
-    <div className={styles.overlay} onClick={onClose}>
+    <div
+      className={styles.overlay}
+      onClick={onClose}
+    >
       <div
         className={styles.modal}
         onClick={(event) => event.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
       >
         <div className={styles.modalTop}>
           <h3 className={styles.modalName}>{listName}</h3>
-          <Button variant="transparent" onClick={onClose}>
+          <Button
+            variant="transparent"
+            onClick={onClose}
+            aria-label="Close"
+          >
             <IoClose />
           </Button>
         </div>
         <p className={styles[variant]}>{cta}</p>
-        <form action="submit" className={styles.form}>
-          <Input type={type} value={value}></Input>
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className={styles.form}
+        >
+          <Input
+            type={type}
+            defaultValue={value}
+          ></Input>
           <div className={styles.buttons}>
-            <Button variant="secondary" onClick={onClose}>
+            <Button
+              variant="secondary"
+              onClick={onClose}
+            >
               Cancel
             </Button>
             <Button variant="modalBtn">{mainBtnName}</Button>

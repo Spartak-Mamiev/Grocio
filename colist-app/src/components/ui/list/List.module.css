@@ -8,6 +8,8 @@
   margin-top: 10px;
   background: var(--color-background);
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .listContainer:hover {
