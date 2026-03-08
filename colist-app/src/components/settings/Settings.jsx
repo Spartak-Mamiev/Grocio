@@ -185,7 +185,7 @@ export default function Settings() {
         </section>
 
         <footer className={styles.pageFooter}>
-          <p>Colist v1.0.0</p>
+          <p>Grocio v1.0.0</p>
           <p>Made with care for better grocery shopping</p>
         </footer>
       </main>

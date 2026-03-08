@@ -51,7 +51,7 @@ export default function LoginPage() {
       <div className={styles.logoBar}>
         <img
           src="/logo-square.jpg"
-          alt="Colist logo"
+          alt="Grocio logo"
           className={styles.logo}
         />
       </div>

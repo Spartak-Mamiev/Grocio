@@ -56,7 +56,7 @@ export default function ListPage() {
             <Link to="/">
               <img
                 src="/logo-square.jpg"
-                alt="Colist logo"
+                alt="Grocio logo"
                 className={styles.logo}
               />
             </Link>
