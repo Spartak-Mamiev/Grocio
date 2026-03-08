@@ -2,7 +2,17 @@ import styles from './Item.module.css';
 import Button from '../button/Button';
 import { FaRegTrashAlt } from 'react-icons/fa';
 
-export default function Item({ name, addedBy, onClick }) {
+// Renders a single grocery item with a checkbox and delete button.
+// onToggle is called when the checkbox is clicked.
+// onDelete is called when the trash button is clicked.
+export default function Item({
+  name,
+  addedBy,
+  isCompleted,
+  onToggle,
+  onDelete,
+  onClick,
+}) {
   return (
     <li
       className={styles.groceryItem}
@@ -12,6 +22,8 @@ export default function Item({ name, addedBy, onClick }) {
         <input
           type="checkbox"
           className={styles.itemCheckbox}
+          checked={isCompleted} // Reflect the completed state from the database
+          onChange={onToggle} // Toggle completed state in Supabase
           onClick={(event) => event.stopPropagation()}
         />
         <div className={styles.itemText}>
@@ -21,7 +33,10 @@ export default function Item({ name, addedBy, onClick }) {
       </label>
       <Button
         variant="transparent"
-        onClick={(event) => event.stopPropagation()}
+        onClick={(event) => {
+          event.stopPropagation();
+          onDelete(); // Delete the item from Supabase
+        }}
         aria-label="Delete item"
       >
         <FaRegTrashAlt
