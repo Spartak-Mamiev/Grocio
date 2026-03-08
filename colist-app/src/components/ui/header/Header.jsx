@@ -9,12 +9,15 @@ export default function Header({
   showMenu = true,
   showSettings = true,
   showBack = false,
+  leftSlot,
 }) {
   const navigate = useNavigate();
 
   return (
     <header className={styles.header}>
-      {showBack ? (
+      {leftSlot ? (
+        leftSlot
+      ) : showBack ? (
         <button
           className={styles.backBtn}
           onClick={() => navigate(-1)}

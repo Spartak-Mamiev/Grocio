@@ -44,6 +44,13 @@ export default function LoginPage() {
 
   return (
     <main className={styles.loginPageContainer}>
+      <div className={styles.logoBar}>
+        <img
+          src="/logo-square.jpg"
+          alt="Colist logo"
+          className={styles.logo}
+        />
+      </div>
       <header className={styles.ctaContainer}>
         <h1 className={styles.title}>Welcome Back</h1>
         <p className={styles.subtitle}>Sign in to continue sharing lists</p>

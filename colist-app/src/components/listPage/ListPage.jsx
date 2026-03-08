@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import styles from './ListPage.module.css';
 import Button from '../ui/button/Button';
 import Header from '../ui/header/Header';
@@ -51,7 +51,19 @@ export default function ListPage() {
     <>
       <div className={styles.header}>
         {/* Show the list name from the database, fallback to "List" */}
-        <Header>{currentList?.name || 'List'}</Header>
+        <Header
+          leftSlot={
+            <Link to="/">
+              <img
+                src="/logo-square.jpg"
+                alt="Colist logo"
+                className={styles.logo}
+              />
+            </Link>
+          }
+        >
+          {currentList?.name || 'List'}
+        </Header>
 
         <div className={styles.collaboratorsBar}>
           <div className={styles.collaboratorsList}>

@@ -36,7 +36,18 @@ export default function MainPage() {
 
   return (
     <main className={styles.mainPage}>
-      <Header showMenu={false}>Your Lists</Header>
+      <Header
+        showMenu={false}
+        leftSlot={
+          <img
+            src="/logo-square.jpg"
+            alt="Colist logo"
+            className={styles.logo}
+          />
+        }
+      >
+        Your Lists
+      </Header>
       <section
         className={styles.listsSection}
         aria-label="Your lists"
