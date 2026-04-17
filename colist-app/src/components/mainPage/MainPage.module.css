@@ -6,6 +6,12 @@
   background-color: var(--color-primary);
 }
 
+.friendsBtnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 20px 0;
+}
+
 .listsSection{
   margin-top: 40px;
   padding: 20px;

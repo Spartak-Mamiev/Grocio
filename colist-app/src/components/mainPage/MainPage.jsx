@@ -4,12 +4,24 @@ import Button from '../ui/button/Button';
 import Input from '../ui/input/Input';
 import Header from '../ui/header/Header';
 import List from '../ui/list/List';
+import FriendsModal from '../ui/friendsModal/FriendsModal';
 import { useLists } from '../../context/ListsContext';
+import useFriends from '../../hooks/useFriends';
+import { FiUserPlus } from 'react-icons/fi';
 
 export default function MainPage() {
   const { lists, loading, createList, deleteList } = useLists();
+  const {
+    friends,
+    searchResults,
+    searching,
+    searchUsers,
+    addFriend,
+    removeFriend,
+  } = useFriends();
   const [newListName, setNewListName] = useState(''); // Input value for new list name
   const [error, setError] = useState(null); // Error message for CRUD failures
+  const [showFriendsModal, setShowFriendsModal] = useState(false);
 
   // Handle creating a new list from the input
   async function handleAddList() {
@@ -48,6 +60,18 @@ export default function MainPage() {
       >
         Your Lists
       </Header>
+
+      <div className={styles.friendsBtnWrapper}>
+        <Button
+          variant="ghost"
+          size="small"
+          onClick={() => setShowFriendsModal(true)}
+          aria-label="Add friend"
+        >
+          <FiUserPlus /> Friends
+        </Button>
+      </div>
+
       <section
         className={styles.listsSection}
         aria-label="Your lists"
@@ -94,6 +118,18 @@ export default function MainPage() {
           +
         </Button>
       </div>
+
+      {showFriendsModal && (
+        <FriendsModal
+          friends={friends}
+          searchResults={searchResults}
+          searching={searching}
+          onSearch={searchUsers}
+          onAddFriend={addFriend}
+          onRemoveFriend={removeFriend}
+          onClose={() => setShowFriendsModal(false)}
+        />
+      )}
     </main>
   );
 }
