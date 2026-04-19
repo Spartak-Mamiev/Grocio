@@ -26,3 +26,5 @@ dist-ssr
 
 # Private planning docs
 implementation-plan.md
+.vercel
+.env*.local
